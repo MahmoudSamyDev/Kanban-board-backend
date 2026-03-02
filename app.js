@@ -30,12 +30,8 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: process.env.BASE_URL_DEV || "http://localhost:3000/api/v1",
-        description: "Development server",
-      },
-      {
-        url: process.env.BASE_URL_PROD || "https://your-vercel-url/api/v1",
-        description: "Production server",
+        url: "/api/v1",
+        description: "Current environment",
       },
     ],
     components: {
