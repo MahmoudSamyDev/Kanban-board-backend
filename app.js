@@ -7,9 +7,6 @@ const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const app = express();
 
-const connectDB = require("./src/config/db");
-
-connectDB();
 // Swagger configuration
 const swaggerOptions = {
   definition: {
@@ -300,7 +297,7 @@ const swaggerSpecs = swaggerJsdoc(swaggerOptions);
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "",
+    origin: process.env.CLIENT_URL || "*",
     credentials: true,
   }),
 );
